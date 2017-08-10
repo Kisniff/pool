@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/09 19:05:40 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/09 19:10:57 by jlehideu         ###   ########.fr       */
+/*   Created: 2017/08/07 11:05:31 by jlehideu          #+#    #+#             */
+/*   Updated: 2017/08/09 09:22:10 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_boolean.h"
+#include <stdlib.h>
 
-void ft_putstr(char *str)
+int	ft_ultimate_range(int **range, int min, int max)
 {
-	while (*str)
-		write(1, str++, 1);
-}
+	int		i;
+	int		*table;
 
-t_bool ft_is_even(int nbr)
-{
-	return ((EVEN(nbr)) ? TRUE : FALSE);
-}
-
-int main(int argc, char **argv)
-{
-	(void)argv;
-	if (ft_is_even(argc - 1) == TRUE)
-		ft_putstr(EVEN_MSG);
-	else
-		ft_putstr(ODD_MSG);
-	return (SUCCESS);
+	i = 0;
+	if (min >= max)
+	{
+		*range = NULL;
+		return (0);
+	}
+	table = (int*)malloc(sizeof(int) * (max - min));
+	while ((min + i) < max)
+	{
+		table[i] = min + i;
+		i++;
+	}
+	*range = table;
+	return (max - min);
 }

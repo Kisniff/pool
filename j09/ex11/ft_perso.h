@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stock_par.h                                     :+:      :+:    :+:   */
+/*   ft_perso.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/10 14:23:55 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/10 15:25:22 by jlehideu         ###   ########.fr       */
+/*   Created: 2017/08/11 10:27:44 by jlehideu          #+#    #+#             */
+/*   Updated: 2017/08/11 10:44:30 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STOCK_PAR_H
-# define FT_STOCK_PAR_H
-
-# include <stdlib.h>
-
-typedef struct	s_stock_par
+#ifndef FT_PERSO_H
+# define FT_PERSO_H
+typedef struct	s_perso
 {
-	int		size_param;
-	char	*str;
-	char	*copy;
-	char	**tab;
-}				t_stock_par;
-
-char			**ft_split_whitespaces(char *str);
-void			ft_show_tab(struct s_stock_par *par);
+	char	*name;
+	int		life;
+	int		age;
+	char	profession[18];
+}				t_perso;
+# define SAVE_THE_WORLD "Niquer des mères\0"
 
 #endif

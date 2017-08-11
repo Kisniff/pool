@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stock_par.h                                     :+:      :+:    :+:   */
+/*   ft_show_tab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/10 14:23:55 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/10 15:25:22 by jlehideu         ###   ########.fr       */
+/*   Created: 2017/08/10 15:20:20 by jlehideu          #+#    #+#             */
+/*   Updated: 2017/08/10 19:22:42 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STOCK_PAR_H
-# define FT_STOCK_PAR_H
+#include "ft_stock_par.h"
 
-# include <stdlib.h>
-
-typedef struct	s_stock_par
+void	ft_show_tab(struct s_stock_par *par)
 {
-	int		size_param;
-	char	*str;
-	char	*copy;
-	char	**tab;
-}				t_stock_par;
+	int	size_p;
+	int	ac;
 
-char			**ft_split_whitespaces(char *str);
-void			ft_show_tab(struct s_stock_par *par);
+	size_p = 0;
+	ac = 0;
 
-#endif
+}

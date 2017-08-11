@@ -6,7 +6,7 @@
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 14:23:55 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/10 14:23:58 by jlehideu         ###   ########.fr       */
+/*   Updated: 2017/08/10 15:25:22 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct	s_stock_par
 	char	**tab;
 }				t_stock_par;
 
-char	**ft_split_whitespaces(char *str);
-void	ft_show_tab(struct s_stock_par *par);
+char			**ft_split_whitespaces(char *str);
+void			ft_show_tab(struct s_stock_par *par);
 
 #endif

@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stock_par.h                                     :+:      :+:    :+:   */
+/*   ft_scrambler.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/10 14:23:55 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/10 15:25:22 by jlehideu         ###   ########.fr       */
+/*   Created: 2017/08/11 09:59:26 by jlehideu          #+#    #+#             */
+/*   Updated: 2017/08/11 10:26:42 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STOCK_PAR_H
-# define FT_STOCK_PAR_H
-
-# include <stdlib.h>
-
-typedef struct	s_stock_par
+void	ft_scrambler(int ***a, int *b, int *******c, int ****d)
 {
-	int		size_param;
-	char	*str;
-	char	*copy;
-	char	**tab;
-}				t_stock_par;
+	int tmp;
 
-char			**ft_split_whitespaces(char *str);
-void			ft_show_tab(struct s_stock_par *par);
+	tmp = c[0][0][0][0][0][0][0];
+	c[0][0][0][0][0][0][0] = a[0][0][0];
+	a[0][0][0] = b[0];
+	b[0] = d[0][0][0][0];
+	d[0][0][0][0] = tmp;
+}
 
-#endif

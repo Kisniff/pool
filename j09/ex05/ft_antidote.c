@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stock_par.h                                     :+:      :+:    :+:   */
+/*   ft_antidote.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/10 14:23:55 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/10 15:25:22 by jlehideu         ###   ########.fr       */
+/*   Created: 2017/08/11 09:38:04 by jlehideu          #+#    #+#             */
+/*   Updated: 2017/08/11 09:54:44 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STOCK_PAR_H
-# define FT_STOCK_PAR_H
+#include <stdio.h>
 
-# include <stdlib.h>
-
-typedef struct	s_stock_par
+int	ft_antidote(int i, int j, int k)
 {
-	int		size_param;
-	char	*str;
-	char	*copy;
-	char	**tab;
-}				t_stock_par;
-
-char			**ft_split_whitespaces(char *str);
-void			ft_show_tab(struct s_stock_par *par);
-
-#endif
+	if (i <= j && j <= k)
+		return (j);
+	else if (k <= j && j <= i)
+		return (j);
+	else if (j <= k && k <= i)
+		return (k);
+	else if (i <= k && k <= j)
+		return (k);
+	else if (j <= i && i <= k)
+		return (i);
+	else if (k <= i && i <= j)
+		return (i);
+	return (0);
+}

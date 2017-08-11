@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/11 15:45:11 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/11 15:45:29 by jlehideu         ###   ########.fr       */
+/*   Created: 2017/08/11 16:25:43 by jlehideu          #+#    #+#             */
+/*   Updated: 2017/08/11 16:26:09 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_active_bits(int value)
+int	ft_active_bits(int value)
 {
 	int i;
 

@@ -6,7 +6,7 @@
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 17:36:11 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/10 18:05:00 by jlehideu         ###   ########.fr       */
+/*   Updated: 2017/08/11 16:26:53 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,4 @@ void	ft_takes_place(int hour)
 		printf("THE FOLLOWING TAKES PLACE BETWEEN 11.00 AM AND 12.00 PM\n");
 	else if (hour == 23)
 		printf("THE FOLLOWING TAKES PLACE BETWEEN 11.00 PM AND 12.00 AM\n");
-}
-
-int	main()
-{
-	ft_takes_place(10);
-	ft_takes_place(11);
-	ft_takes_place(12);
-	ft_takes_place(22);
-	ft_takes_place(23);
-	ft_takes_place(24);
 }

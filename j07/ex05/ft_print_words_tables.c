@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_word_tables.c                             :+:      :+:    :+:   */
+/*   ft_print_words_tables.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 09:49:15 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/09 15:17:49 by jlehideu         ###   ########.fr       */
+/*   Updated: 2017/08/11 15:26:10 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_putchar(char c)
 	return (0);
 }
 
-void	ft_print_word_tables(char **tab)
+void	ft_print_words_tables(char **tab)
 {
 	int	idx_l;
 	int	idx_c;

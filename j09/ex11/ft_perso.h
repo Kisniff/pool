@@ -6,7 +6,7 @@
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/11 10:27:44 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/11 16:23:59 by jlehideu         ###   ########.fr       */
+/*   Updated: 2017/08/11 11:13:34 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 typedef struct	s_perso
 {
 	char	*name;
-	int		life;
+	float	life;
 	int		age;
-	char	profession[18];
+	char	*profession;
 }				t_perso;
 # define SAVE_THE_WORLD "Niquer des mères\0"
 

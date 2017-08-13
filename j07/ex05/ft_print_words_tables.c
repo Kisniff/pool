@@ -1,43 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_words_tables.c                             :+:      :+:    :+:   */
+/*   ft_print_words_tables.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/09 09:49:15 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/11 15:26:10 by jlehideu         ###   ########.fr       */
+/*   Created: 2017/08/13 11:19:16 by jlehideu          #+#    #+#             */
+/*   Updated: 2017/08/13 11:21:18 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-
-int		ft_putchar(char c);
-char	**ft_split_whitespaces(char *str);
-
-int		ft_putchar(char c)
-{
-	write(1, &c, 1);
-	return (0);
-}
+void	ft_putchar(char c);
 
 void	ft_print_words_tables(char **tab)
 {
-	int	idx_l;
-	int	idx_c;
+	int		i;
+	int		j;
 
-	idx_l = 0;
-	idx_c = 0;
-	while (tab[idx_l])
+	i = 0;
+	j = 0;
+	while (tab[i])
 	{
-		while (tab[idx_l][idx_c])
+		while (tab[i][j])
 		{
-			ft_putchar(tab[idx_l][idx_c]);
-			idx_c++;
+			ft_putchar(tab[i][j]);
+			j++;
 		}
+		j = 0;
 		ft_putchar('\n');
-		idx_l++;
-		idx_c = 0;
+		i++;
 	}
 }

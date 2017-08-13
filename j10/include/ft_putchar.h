@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_generic.c                                       :+:      :+:    :+:   */
+/*   ft_putchar.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/10 17:02:54 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/10 18:00:20 by jlehideu         ###   ########.fr       */
+/*   Created: 2017/08/13 09:54:33 by jlehideu          #+#    #+#             */
+/*   Updated: 2017/08/13 09:57:38 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_PUTCHAR_H
+# define FT_PUTCHAR_H
 
-void	ft_generic(void)
-{
-	write(1, "Tut tut ; Tut tut\n", 18);
-}
+void	ft_putchar(char c);
+#endif

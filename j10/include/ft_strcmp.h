@@ -1,26 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_active_bits.c                                   :+:      :+:    :+:   */
+/*   ft_strcmp.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/11 16:25:43 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/11 16:26:09 by jlehideu         ###   ########.fr       */
+/*   Created: 2017/08/13 09:59:37 by jlehideu          #+#    #+#             */
+/*   Updated: 2017/08/13 10:01:40 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_active_bits(int value)
-{
-	int i;
+#ifndef FT_STRCMP_H
+# define FT_STRCMP_H
 
-	i = 0;
-	while (value != 1)
-	{
-		if (value % 2 == 1)
-			i++;
-		value /= 2;
-	}
-	i++;
-	return (i);
-}
+int	ft_strcmp(char *s1, char *s2);
+#endif

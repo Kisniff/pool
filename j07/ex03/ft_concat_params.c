@@ -6,11 +6,12 @@
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 13:53:58 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/12 19:32:35 by jlehideu         ###   ########.fr       */
+/*   Updated: 2017/08/14 10:23:30 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 int		size_off(char *str)
 {
@@ -45,6 +46,7 @@ char	*assign(int ac, char **av, char *str, int size_of)
 		idx_c = 0;
 		idx_l++;
 	}
+	str[idx_str - 1] = '\0';
 	return (str);
 }
 
@@ -64,4 +66,10 @@ char	*ft_concat_params(int argc, char **argv)
 	}
 	str = assign(argc, argv, str, p);
 	return (str);
+}
+
+int main(int ac, char **av)
+{
+	printf("%s\n", ft_concat_params(ac, av));
+	return (0);
 }

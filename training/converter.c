@@ -13,6 +13,7 @@ int		ft_power(int base_from, int size_of_word)
 
 int		ft_convert_to_ten(unsigned int nb, int base_from)
 {
+	//fonctionne niauel
 	int		i;
 	int		size_of_word;
 	int		number;
@@ -43,7 +44,7 @@ int		ft_convert_to_base(unsigned int nb, int base_to)
 	int		power;
 	int		tmp;
 	int		div;
-	int	i;
+	int		i;
 
 	power = 0;
 	tmp = 0;
@@ -66,22 +67,21 @@ int		ft_convert_to_base(unsigned int nb, int base_to)
 
 int	main()
 {
-	int					base_from;
-	int					base_to;
-	unsigned int		u_number;
+	char				*base_from;
+	char				*base_to;
+	char				*u_number;
 
-	base_from = 7;
-	base_to = 2;
-	u_number = -356;
-	if (u_number < 0)
-		u_number = u_number * -1;
+	base_from = '7';
+	base_to = '2';
+	u_number = "356";
 	if (base_from == base_to)
 		return (u_number);
 	else
 	{
 		u_number = ft_convert_to_ten(u_number, base_from);
+		printf("%d\n", u_number);
 		u_number = ft_convert_to_base(u_number, base_to);
+		printf("%d\n", u_number);
 	}
-	printf("%d", u_number * -1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 15:20:20 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/14 14:26:16 by jlehideu         ###   ########.fr       */
+/*   Updated: 2017/08/14 15:43:04 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	ft_show_tab(struct s_stock_par *par)
 		while (par[size].tab[i])
 		{
 			ft_putstr(par[size].tab[i]);
+			ft_putchar('\n');
 			i++;
 		}
 	}

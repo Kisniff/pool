@@ -6,7 +6,7 @@
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 15:20:20 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/14 11:00:06 by jlehideu         ###   ########.fr       */
+/*   Updated: 2017/08/14 14:26:16 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
-void	ft_puchar(char c);
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	ft_putchar(char c);
 
 void ft_putstr(char *str)
 {
@@ -33,29 +28,43 @@ void ft_putstr(char *str)
 	}
 }
 
-void	ft_show_tab(struct s_stock_par *par)
+void ft_putnbr(int nb)
 {
-	int	size;
+	unsigned int	a;
 
-	size = 0;
-	while (par[size].str[0] != '0')
+	if (nb < 0)
 	{
-		ft_putstr(par[size].str);
-		ft_putchar('\n');
-		ft_putchar(par[size].size_param + '0');
-		ft_putchar('\n');
-		ft_putstr(par[size].copy);
-		ft_putchar('\n');
+		a = nb * -1;
+		ft_putchar('-');
+	}
+	else
+		a = nb;
+	if (a < 9)
+		ft_putchar(a + '0');
+	if (a > 9)
+	{
+		ft_putnbr(a / 10);
+		ft_putnbr(a % 10);
 	}
 }
 
-int main(int ac, char **av)
+void	ft_show_tab(struct s_stock_par *par)
 {
-	t_stock_par	structure;
+	int	size;
+	int	i;
 
-	printf("%d\n", ac);
-	structure = ft_param_to_tab(ac, av);
-	ft_putchar('y');
-	ft_show_tab(&structure);
-	return (0);
+	size = 0;
+	i = 0;
+	while (par[size].str[0] != '0')
+	{
+		ft_putnbr(par[size].size_param);
+		ft_putchar('\n');
+		ft_putstr(par[size].copy);
+		ft_putchar('\n');
+		while (par[size].tab[i])
+		{
+			ft_putstr(par[size].tab[i]);
+			i++;
+		}
+	}
 }

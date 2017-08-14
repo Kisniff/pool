@@ -6,12 +6,11 @@
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 13:53:58 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/14 10:23:30 by jlehideu         ###   ########.fr       */
+/*   Updated: 2017/08/14 12:47:24 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 int		size_off(char *str)
 {
@@ -32,7 +31,7 @@ char	*assign(int ac, char **av, char *str, int size_of)
 	idx_l = 1;
 	idx_c = 0;
 	idx_str = 0;
-	str = (char*)malloc(sizeof(char) * size_of);
+	str = (char*)malloc(sizeof(char) * size_of + 1);
 	while (idx_l < ac)
 	{
 		while (av[idx_l][idx_c])
@@ -66,10 +65,4 @@ char	*ft_concat_params(int argc, char **argv)
 	}
 	str = assign(argc, argv, str, p);
 	return (str);
-}
-
-int main(int ac, char **av)
-{
-	printf("%s\n", ft_concat_params(ac, av));
-	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 10:55:00 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/14 12:46:33 by jlehideu         ###   ########.fr       */
+/*   Updated: 2017/08/14 18:11:47 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	*ft_range(int min, int max)
 	{
 		result[i] = min;
 		min++;
+		i++;
 	}
 	return (result);
 }

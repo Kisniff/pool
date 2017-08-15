@@ -6,11 +6,12 @@
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 10:52:13 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/13 11:18:23 by jlehideu         ###   ########.fr       */
+/*   Updated: 2017/08/14 19:12:17 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 int		ft_strlen(char *str)
 {
@@ -81,4 +82,11 @@ char	**ft_split_whitespaces(char *str)
 	}
 	tab[index] = 0;
 	return (tab);
+}
+
+int	main(int ac, char **av)
+{
+	(void)ac;
+	printf("%d", ft_strlen(av[1]));
+	return (0);
 }

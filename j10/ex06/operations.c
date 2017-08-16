@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/07 10:55:00 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/16 09:44:28 by jlehideu         ###   ########.fr       */
+/*   Created: 2017/08/16 14:50:54 by jlehideu          #+#    #+#             */
+/*   Updated: 2017/08/16 15:30:10 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "header.h"
 
-int	*ft_range(int min, int max)
+int	addition(int nb1, int nb2)
 {
-	int		i;
-	int		*result;
+	return (nb1 + nb2);
+}
 
-	i = 0;
-	if (min >= max)
-	{
-		result = 0;
-		return (result);
-	}
-	result = (int*)malloc(sizeof(int) * (max - min));
-	while (max > min)
-	{
-		result[i] = min;
-		min++;
-		i++;
-	}
-	return (result);
+int	soustraction(int nb1, int nb2)
+{
+	return (nb1 - nb2);
+}
+
+int	multiplication(int nb1, int nb2)
+{
+	return (nb1 * nb2);
+}
+
+int	division(int nb1, int nb2)
+{
+	return (nb1 / nb2);
+}
+
+int	modulo(int nb1, int nb2)
+{
+	return (nb1 % nb2);
 }

@@ -6,7 +6,7 @@
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/15 09:09:00 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/15 12:24:44 by jlehideu         ###   ########.fr       */
+/*   Updated: 2017/08/15 15:09:21 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	power_it(int nb, int pw)
 	return (nb * power_it(nb, pw - 1));
 }
 
-int	to_ten(char *number, char *base_from, char *base_to)
+int	to_ten(char *number, char *base_from)
 {//OP
 	int		power;
 	int		produit; //nature de la base 
@@ -51,7 +51,6 @@ int	to_ten(char *number, char *base_from, char *base_to)
 char	assign(int produit2, char *str)
 {
 	char	c;
-	int		i;
 
 	c = str[produit2];
 	return (c);
@@ -94,7 +93,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	number = 0;
 	if (base_from == base_to)
 		return (nbr);
-	number = to_ten(nbr, base_from, base_to);
+	number = to_ten(nbr, base_from);
 	result = to_base(number, base_to);
 	return (result);
 }

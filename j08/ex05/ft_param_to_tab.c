@@ -6,7 +6,7 @@
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 14:24:25 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/14 18:57:19 by jlehideu         ###   ########.fr       */
+/*   Updated: 2017/08/16 09:14:10 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_stock_par			*assign_val(int ac, char **av, t_stock_par *st_table)
 	st_table[ac].str = av[ac];
 	st_table[ac].tab = ft_split_whitespaces(av[ac]);
 	st_table[ac].copy = (char*)malloc(sizeof(char) * size_p + 1);
-	while (av[ac][++i]) //OP
+	while (av[ac][++i]) 
 		st_table[ac].copy[i] = av[ac][i];
 	st_table[ac].copy[i + 1] = '\0';
 	return (st_table);
@@ -43,12 +43,14 @@ struct s_stock_par	*ft_param_to_tab(int ac, char **av)
 {
 	t_stock_par	*st_table;
 	int			size_p;
+	int			i;
 
 	size_p = 0;
+	i = ac;
 	st_table = malloc(sizeof(t_stock_par) * ac);
+	while (--i >= 1)
+		st_table = assign_val(i, av, st_table);
 	st_table[ac].str = 0;
-	while (--ac >= 1)
-		st_table = assign_val(ac, av, st_table);
 	return (st_table);
 }
 

@@ -6,7 +6,7 @@
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/16 09:57:33 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/16 15:42:12 by jlehideu         ###   ########.fr       */
+/*   Updated: 2017/08/16 16:46:01 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ int	have_num(char *str)
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
-	i--;
-	while (str[++i])
-		if (str[i] >= '0' && str[i] <= '9')
-			return (1);
+	if (str[i] >= '0' && str[i] <= '9')
+	{
+		return (1);
+	}
 	return (0);
 }
 
@@ -80,8 +80,8 @@ int	main(int ac, char **av)
 	nb1 = ft_atoi(av[1]);
 	nb2 = ft_atoi(av[3]);
 	operateur = av[2][0];
-	(nb2 == 0 && operateur == '%') ? ft_putstr("Stop : modulo by zero\n") : 0;
-	(nb2 == 0 && operateur == '/') ? ft_putstr("Stop : division by zero\n") : 0;
+	(nb2 == 0 && operateur == '%') ? ft_putstr("Stop : modulo by zero") : 0;
+	(nb2 == 0 && operateur == '/') ? ft_putstr("Stop : division by zero") : 0;
 	if ((nb2 == 0 && operateur == '/') || (nb2 == 0 && operateur == '%'))
 		return (0);
 	nb1 = calculation(nb1, nb2, operateur);

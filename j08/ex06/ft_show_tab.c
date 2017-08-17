@@ -6,7 +6,7 @@
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 15:20:20 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/16 09:18:22 by jlehideu         ###   ########.fr       */
+/*   Updated: 2017/08/17 11:33:46 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,19 @@
 #include <unistd.h>
 #include <stdio.h>
 
-void	ft_putchar(char c);
-
-void ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
-	int	i;
+	int				i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		ft_putchar(str[i]);
 		i++;
 	}
 }
 
-void ft_putnbr(int nb)
+void	ft_putnbr(int nb)
 {
 	unsigned int	a;
 
@@ -50,8 +48,8 @@ void ft_putnbr(int nb)
 
 void	ft_show_tab(struct s_stock_par *par)
 {
-	int	size;
-	int	i;
+	int				size;
+	int				i;
 
 	size = 1;
 	i = 0;

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "header.h"
+#include "header_d.h"
 
 int	have_num(char *str)
 {

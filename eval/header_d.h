@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef header_h
-# define header_h
+#ifndef header_d_h
+# define header_d_h
 
 void	ft_putchar(char c);
 int		ft_putnbr(char c);

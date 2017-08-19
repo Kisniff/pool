@@ -6,46 +6,54 @@
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 14:27:07 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/17 12:29:42 by jlehideu         ###   ########.fr       */
+/*   Updated: 2017/08/18 12:51:06 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <stdlib.h>
 
-int	ft_strcmp(int *s1, int *s2)
+int	ft_strcmp(int s1, int s2)
+{
+	if (s1 != s2)
+		return (s1 - s2);
+	return (0);
+}
+
+int	ft_is_sort_d(int *tab, int length, int (*f)(int, int))
 {
 	int	i;
 
 	i = 0;
-	while (s1[i] || s2[i])
+	while (i + 1 < length)
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
+		if (f(tab[i], tab[i + 1]) >= 0)
+			i++;
+		else
+			return (0);
 	}
-	return (0);
+	return (1);
 }
 
-int	ft_is_sort(int *tab, int length, int(*f)(int, int))
+int	ft_is_sort_i(int *tab, int length, int (*f)(int, int))
 {
 	int	i;
-	int	count;
 
 	i = 0;
-	while(tab[i + 1])
+	while (i + 1 < length)
 	{
-		if (f(tab[i], tab[i + 1]))
-		{
-		}
+		if (f(tab[i], tab[i + 1]) <= 0)
+			i++;
+		else
+			return (0);
 	}
-	return (count);
+	return (1);
 }
 
-int	main(int ac, char **av)
+int	ft_is_sort(int *tab, int length, int (*f)(int, int))
 {
-	(void)ac;
-	int (*f)(int, int);
-
-	f = &ft_strcmp;
-	return (0);
+	if (tab == NULL || length <= 0 || f == NULL)
+		return (0);
+	if (ft_is_sort_d(tab, length, f) == 0 && ft_is_sort_i(tab, length, f) == 0)
+		return (0);
+	return (1);
 }

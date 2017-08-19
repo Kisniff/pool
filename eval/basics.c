@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stock_par.h                                     :+:      :+:    :+:   */
+/*   basics.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/10 14:23:55 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/17 15:50:58 by jlehideu         ###   ########.fr       */
+/*   Created: 2017/08/19 10:04:43 by jlehideu          #+#    #+#             */
+/*   Updated: 2017/08/19 10:10:20 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STOCK_PAR_H
-# define FT_STOCK_PAR_H
+#include <unistd.h>
 
-# include <stdlib.h>
-
-typedef struct		s_stock_par
+void	ft_putchar(char c)
 {
-	int		size_param;
-	char	*str;
-	char	*copy;
-	char	**tab;
-}					t_stock_par;
+	write(1, &c, 1);
+}
 
-char				**ft_split_whitespaces(char *str);
-struct s_stock_par	**ft_param_to_tab(int ac, char **av);
-void				ft_putchar(char c);
+void	ft_putnbr(int nbr)
+{
+	unsigned int number;
 
-#endif
+	if (nbr < 0)
+	{
+		ft_putchar('-');
+		number = -nbr;
+	}
+	else
+		number = nbr;
+	if (nbr >= 0 && nbr <= 9)
+		ft_putchar(number + '0');
+	else if (nbr > 9)
+	{
+		ft_putnbr(number / 10);
+		ft_putnbr(number % 10);
+	}
+}

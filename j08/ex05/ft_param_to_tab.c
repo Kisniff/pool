@@ -5,47 +5,53 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/10 14:24:25 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/17 11:31:33 by jlehideu         ###   ########.fr       */
+/*   Created: 2017/08/17 14:43:56 by jlehideu          #+#    #+#             */
+/*   Updated: 2017/08/17 15:50:36 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stock_par.h"
-#include <stdlib.h>
-#include <unistd.h>
 
-t_stock_par			*assign_val(int ac, char **av, t_stock_par *st_table)
+int					str_len(char *str)
 {
-	int			size_p;
 	int			i;
 
-	size_p = 0;
 	i = -1;
-	while (av[ac][size_p])
-		size_p++;
-	st_table[ac].size_param = size_p;
-	st_table[ac].str = av[ac];
-	st_table[ac].tab = ft_split_whitespaces(av[ac]);
-	st_table[ac].copy = (char*)malloc(sizeof(char) * size_p + 1);
-	while (av[ac][++i])
-		st_table[ac].copy[i] = av[ac][i];
-	st_table[ac].copy[i + 1] = '\0';
-	return (st_table);
+	while (str[++i])
+		;
+	return (i);
+}
+
+char				*ft_strcpy(t_stock_par *tab, char *str, int idx_s)
+{
+	int			count_param;
+
+	count_param = -1;
+	while (str[++count_param] != '\0')
+		;
+	tab[idx_s].copy = (char*)malloc(sizeof(char) * count_param);
+	count_param = -1;
+	while (str[++count_param])
+		tab[idx_s].copy[count_param] = str[count_param];
+	tab[idx_s].copy[count_param] = '\0';
+	return (tab[idx_s].copy);
 }
 
 struct s_stock_par	*ft_param_to_tab(int ac, char **av)
 {
-	t_stock_par	*st_table;
-	int			size_p;
-	int			i;
+	int			idx_s;
+	t_stock_par	*tab;
 
-	size_p = 0;
-	i = -1;
-	st_table = malloc(sizeof(t_stock_par) * ac);
-	if (st_table == NULL)
-		return (0);
-	while (++i < ac)
-		st_table = assign_val(i, av, st_table);
-	st_table[ac].str = 0;
-	return (st_table);
+	tab = malloc(sizeof(t_stock_par) * ac + 1);
+	idx_s = 0;
+	while (idx_s < ac)
+	{
+		tab[idx_s].copy = ft_strcpy(tab, av[idx_s], idx_s);
+		tab[idx_s].size_param = str_len(av[idx_s]);
+		tab[idx_s].str = av[idx_s];
+		tab[idx_s].tab = ft_split_whitespaces(av[idx_s]);
+		idx_s++;
+	}
+	tab[idx_s].str = 0;
+	return (tab);
 }

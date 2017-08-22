@@ -6,7 +6,7 @@
 #    By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/20 17:00:22 by jlehideu          #+#    #+#              #
-#    Updated: 2017/08/21 10:26:45 by jlehideu         ###   ########.fr        #
+#    Updated: 2017/08/21 10:52:19 by jlehideu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,12 +15,19 @@ NAME = ft_display_file
 SOURCES = display.c\
 		  basics.c
 
+OBJECTS = display.o\
+		  basics.o
+
 all: $(NAME)
 
-$(NAME): 
-	gcc -o $(NAME) $(SOURCES)
+$(NAME): object
+	gcc -o $(NAME) $(OBJECTS)
+
+object:
+	gcc -c $(SOURCES)
 
 clean:
 	rm $(NAME)
 
-re: clean all
+fclean: clean
+	rm $(OBJECTS)

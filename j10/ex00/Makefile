@@ -6,7 +6,7 @@
 #    By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/13 11:43:15 by jlehideu          #+#    #+#              #
-#    Updated: 2017/08/18 12:45:52 by jlehideu         ###   ########.fr        #
+#    Updated: 2017/08/22 10:34:52 by jlehideu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,9 +39,9 @@ compile :
 	gcc -c $(SRC) -I $(HEAD)
 
 clean :
-	rm -f ../libft.a
+	rm -f $(OBJ)
 
 fclean : clean
-	rm -f *.o
+	rm -f ../libft.a
 
 re : fclean all

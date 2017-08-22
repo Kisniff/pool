@@ -6,7 +6,7 @@
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/16 10:27:23 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/18 14:22:26 by jlehideu         ###   ########.fr       */
+/*   Updated: 2017/08/22 10:55:15 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,11 @@ void	ft_putstr(char *str)
 
 void	ft_putnbr(int nbr)
 {
-	(nbr == -2147483648) ? ft_putstr("-2147483648") : 0;
+	if (nbr == -2147483648)
+	{
+		ft_putstr("-2147483648");
+		return ;
+	}
 	if (nbr >= 0 && nbr <= 9)
 		ft_putchar(nbr + '0');
 	if (nbr < 0)

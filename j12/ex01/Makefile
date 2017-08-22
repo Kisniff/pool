@@ -5,24 +5,27 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2017/08/16 10:06:02 by jlehideu          #+#    #+#              #
-#    Updated: 2017/08/22 10:43:57 by jlehideu         ###   ########.fr        #
+#    Created: 2017/08/21 11:19:46 by jlehideu          #+#    #+#              #
+#    Updated: 2017/08/21 11:25:11 by jlehideu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = do-op
+NAME = ft_cat
 
-SOURCES = main.c ft_atoi.c basics.c operations.c
+SOURCES = basics.c ft_cat.c
 
-OBJ = main.o ft_atoi.o basics.o operations.o
+OBJECTS = basics.o ft_cat.o
 
-all : $(NAME)
+all: $(NAME)
 
-$(NAME): compilation
-	gcc -o $(NAME) $(OBJ)
+$(NAME): objectisation
+	gcc -o $(NAME) $(OBJECTS)
 
-compilation:
+objectisation:
 	gcc -c $(SOURCES)
 
 clean:
-	rm $(OBJ)
+	rm $(NAME)
+
+fclean: clean
+	rm $(OBJECTS)

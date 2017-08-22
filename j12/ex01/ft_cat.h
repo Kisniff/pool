@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_if.c                                      :+:      :+:    :+:   */
+/*   ft_cat.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/13 14:22:59 by jlehideu          #+#    #+#             */
-/*   Updated: 2017/08/22 10:35:25 by jlehideu         ###   ########.fr       */
+/*   Created: 2017/08/21 10:56:35 by jlehideu          #+#    #+#             */
+/*   Updated: 2017/08/21 12:26:31 by jlehideu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_count_if(char **tab, int (*f)(char*))
-{
-	int	i;
-	int	count;
+#ifndef FT_CAT_H
+# define FT_CAT_H
+# include <fcntl.h>
+# include <sys/types.h>
+# include <sys/uio.h>
+# include <unistd.h>
+# include <errno.h>
 
-	i = 0;
-	count = 0;
-	while (tab[i] != 0)
-	{
-		if (f(tab[i]))
-			count++;
-		i++;
-	}
-	return (count);
-}
+void	ft_putchar_error(char c);
+void	ft_putstr_error(char *str);
+void	ft_putchar(char *str);
+void	ft_putstr(char *str);
+
+#endif

@@ -5,24 +5,33 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jlehideu <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2017/08/16 10:06:02 by jlehideu          #+#    #+#              #
-#    Updated: 2017/08/22 10:43:57 by jlehideu         ###   ########.fr        #
+#    Created: 2017/08/21 14:01:20 by jlehideu          #+#    #+#              #
+#    Updated: 2017/08/21 19:08:02 by jlehideu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = do-op
+NAME = ft_tail
 
-SOURCES = main.c ft_atoi.c basics.c operations.c
+SOURCES = get_read_str.c\
+		  ft_tail.c\
+		  basics.c\
+		  ft_atoi.c
 
-OBJ = main.o ft_atoi.o basics.o operations.o
+OBJECTS = get_read_str.o\
+		  ft_tail.o\
+		  basics.o\
+		  ft_atoi.o
 
-all : $(NAME)
+all: $(NAME)
 
-$(NAME): compilation
-	gcc -o $(NAME) $(OBJ)
+$(NAME): objectisation
+	gcc -o $(NAME) $(OBJECTS)
 
-compilation:
+objectisation:
 	gcc -c $(SOURCES)
 
 clean:
-	rm $(OBJ)
+	rm $(OBJECTS)
+
+fclean: clean
+	rm $(NAME)
